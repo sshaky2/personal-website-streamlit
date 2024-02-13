@@ -5,7 +5,7 @@ from PIL import Image
 
 
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
-st.set_page_config(page_title="My Webpage", page_icon=":tada:", layout="wide")
+st.set_page_config(page_title="Optimize Eyebrow", layout="wide")
 
 
 def load_lottieurl(url):
@@ -25,71 +25,53 @@ local_css("style/style.css")
 
 # ---- LOAD ASSETS ----
 lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
-img_contact_form = Image.open("images/yt_contact_form.png")
-img_lottie_animation = Image.open("images/yt_lottie_animation.png")
+img_contact_form = Image.open("images/2021-03-12.jpg")
+img_lottie_animation = Image.open("images/133953700_1063355007518135_1256085435724720813_n.jpg")
 
 # ---- HEADER SECTION ----
 with st.container():
-    st.subheader("Hi, I am Sven :wave:")
-    st.title("A Data Analyst From Germany")
+    st.title("Optimize Eyebrow")
+    st.subheader("Look Great, Feel Amazing!")
     st.write(
-        "I am passionate about finding ways to use Python and VBA to be more efficient and effective in business settings."
+        "Welcome to Optimize Eyebrow, your one-stop-shop for all your beauty needs. Our team of experts has been providing high-quality services to the Maineville, Ohio community for 2 years. Whether you need eyebrow optimization, threading, waxing, facials, haircuts, or beauty products, we have everything you need to keep looking and feeling amazing every single day. Treat yourself to one of our bookable pampering services today."
     )
-    st.write("[Learn More >](https://pythonandvba.com)")
+    # st.write("[Learn More >](https://pythonandvba.com)")
 
-# ---- WHAT I DO ----
+# ---- WHAT WE DO ----
 with st.container():
     st.write("---")
     left_column, right_column = st.columns(2)
     with left_column:
-        st.header("What I do")
-        st.write("##")
+        st.header("About Us")
+        # st.write("##")
         st.write(
             """
-            On my YouTube channel I am creating tutorials for people who:
-            - are looking for a way to leverage the power of Python in their day-to-day work.
-            - are struggling with repetitive tasks in Excel and are looking for a way to use Python and VBA.
-            - want to learn Data Analysis & Data Science to perform meaningful and impactful analyses.
-            - are working with Excel and found themselves thinking - "there has to be a better way."
-
-            If this sounds interesting to you, consider subscribing and turning on the notifications, so you don’t miss any content.
+            Eyebrows threading is a process of cleaning and shaping eyebrows with the help of cotton thread. 
+            Threading keeps away your skin from coming contact to  chemical like in waxing.
             """
         )
-        st.write("[YouTube Channel >](https://youtube.com/c/CodingIsFun)")
+        st.write("[Facebook Page >](https://www.facebook.com/Optimize.Eyebrows)")
+        st.write("[Instagram Page >](https://www.instagram.com/optimize_eyebrows/)")
     with right_column:
-        st_lottie(lottie_coding, height=300, key="coding")
+        st.empty()
+        # st_lottie(lottie_coding, height=300, key="coding")
 
 # ---- PROJECTS ----
 with st.container():
     st.write("---")
-    st.header("My Projects")
+    st.header("Gallery")
     st.write("##")
     image_column, text_column = st.columns((1, 2))
     with image_column:
         st.image(img_lottie_animation)
     with text_column:
-        st.subheader("Integrate Lottie Animations Inside Your Streamlit App")
-        st.write(
-            """
-            Learn how to use Lottie Files in Streamlit!
-            Animations make our web app more engaging and fun, and Lottie Files are the easiest way to do it!
-            In this tutorial, I'll show you exactly how to do it
-            """
-        )
-        st.markdown("[Watch Video...](https://youtu.be/TXSOitGoINE)")
+        st.empty()
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
         st.image(img_contact_form)
     with text_column:
-        st.subheader("How To Add A Contact Form To Your Streamlit App")
-        st.write(
-            """
-            Want to add a contact form to your Streamlit website?
-            In this video, I'm going to show you how to implement a contact form in your Streamlit app using the free service ‘Form Submit’.
-            """
-        )
-        st.markdown("[Watch Video...](https://youtu.be/FOULV9Xij_8)")
+        st.empty()
 
 # ---- CONTACT ----
 with st.container():
@@ -99,7 +81,7 @@ with st.container():
 
     # Documention: https://formsubmit.co/ !!! CHANGE EMAIL ADDRESS !!!
     contact_form = """
-    <form action="https://formsubmit.co/YOUR@MAIL.COM" method="POST">
+    <form action="https://formsubmit.co/shobhit.shakya@gmail.com" method="POST">
         <input type="hidden" name="_captcha" value="false">
         <input type="text" name="name" placeholder="Your name" required>
         <input type="email" name="email" placeholder="Your email" required>
@@ -112,3 +94,66 @@ with st.container():
         st.markdown(contact_form, unsafe_allow_html=True)
     with right_column:
         st.empty()
+
+# import streamlit as st
+# import smtplib
+# from email.mime.text import MIMEText
+# from email.mime.multipart import MIMEMultipart
+
+# def send_message(name, email, message):
+#     sender_email = "eyebrowoptimize@gmail.com"  # Replace with your email
+#     sender_password = "optimize123"  # Replace with your password or app password
+#     receiver_email = "eyebrowoptimize@gmail.com"  # Where you want to receive the messages
+
+#     # Email subject and body setup
+#     subject = "New Contact Us Message"
+#     body = f"Name: {name}\nEmail: {email}\nMessage: {message}"
+    
+#     # Creating a multipart message
+#     msg = MIMEMultipart()
+#     msg["From"] = sender_email
+#     msg["To"] = receiver_email
+#     msg["Subject"] = subject
+    
+#     # Attach the body to the email
+#     msg.attach(MIMEText(body, "plain"))
+    
+#     try:
+#         # Setup the SMTP server
+#         server = smtplib.SMTP("smtp.gmail.com", 587)
+#         server.starttls()  # Secure the connection
+#         server.login(sender_email, sender_password)
+#         text = msg.as_string()
+#         server.sendmail(sender_email, receiver_email, text)
+#         st.success("Email sent successfully")
+#     except Exception as e:
+#         st.error(f"Failed to send email. Error: {e}")
+#     finally:
+#         server.quit()
+
+#     # left_column, right_column = st.columns(2)
+#     # with left_column:
+#     #     st.markdown(contact_form, unsafe_allow_html=True)
+#     # with right_column:
+#     #     st.empty()
+
+# # Streamlit form for "Contact Us"
+# st.title('Contact Us')
+
+# with st.container():
+#     st.write("We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.")
+    
+#     left_column, right_column = st.columns(2)
+#     with left_column:
+#         with st.form("contact_form", clear_on_submit=True):
+#             name = st.text_input("Name")
+#             email = st.text_input("Email")
+#             message = st.text_area("Message", height=150)
+#             submit_button = st.form_submit_button("Send Message")
+        
+#             if submit_button:
+#                 send_message(name, email, message)
+
+#     with right_column:
+#         st.empty()
+    
