@@ -26,7 +26,7 @@ local_css("style/style.css")
 img_1 = Image.open("images/2021-03-12.jpg")
 img_2 = Image.open("images/133953700_1063355007518135_1256085435724720813_n.jpg")
 
-st.header('Optimize Eyebrow', divider='rainbow')
+st.header('Optimize Eyebrow')
 # ---- HEADER SECTION ----
 with st.container():
     # st.title("Optimize Eyebrow")
