@@ -90,3 +90,21 @@ with st.sidebar:
         st.write("---")
 
 
+# Initialize a session state variable to track the sidebar state
+if 'sidebar_expanded' not in st.session_state:
+    st.session_state.sidebar_expanded = True
+
+# Function to toggle the sidebar state
+def toggle_sidebar():
+    st.session_state.sidebar_expanded = not st.session_state.sidebar_expanded
+
+# Button to toggle the sidebar
+st.button("Contact Us", on_click=toggle_sidebar)
+
+# # Use the session state variable to show/hide sidebar content
+# if st.session_state.sidebar_expanded:
+#     st.sidebar.write("This is the sidebar content.")
+
+# st.write("This is the main content area.")
+
+
