@@ -23,7 +23,6 @@ img_2 = Image.open("images/133953700_1063355007518135_1256085435724720813_n.jpg"
 # ---- HEADER SECTION ----
 with st.container():
     st.header("Optimize Eyebrow")
-    st.divider()
     st.subheader("Look Great, Feel Amazing!")
     st.write(
         "Welcome to Optimize Eyebrow, your one-stop-shop for all your beauty needs. Our team of experts has been providing high-quality services to the Maineville, Ohio community for 2 years. Whether you need eyebrow optimization, threading, waxing, facials, haircuts, or beauty products, we have everything you need to keep looking and feeling amazing every single day. Treat yourself to one of our bookable pampering services today."
