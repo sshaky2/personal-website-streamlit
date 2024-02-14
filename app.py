@@ -40,21 +40,18 @@ with st.container():
 # ---- WHAT WE DO ----
 with st.container():
     st.write("---")
-    left_column, right_column = st.columns(2)
-    with left_column:
-        st.header("About Us")
-        # st.write("##")
-        st.write(
-            """
-            Eyebrows threading is a process of cleaning and shaping eyebrows with the help of cotton thread. 
-            Threading keeps away your skin from coming contact to  chemical like in waxing.
-            """
-        )
-        st.write("[Facebook Page >](https://www.facebook.com/Optimize.Eyebrows)")
-        st.write("[Instagram Page >](https://www.instagram.com/optimize_eyebrows/)")
-    with right_column:
-        st.empty()
-        # st_lottie(lottie_coding, height=300, key="coding")
+    st.header("About Us")
+    st.write(
+        """
+Our journey began in [Year], with a passion for enhancing natural beauty and a commitment to customer satisfaction. Our team of experienced and skilled professionals specializes in a range of services, including eyebrow threading, waxing, facial cleansing, haircuts, and more. We believe in using high-quality products and the latest techniques to ensure you leave our salon feeling and looking your best.
+
+At Optimize Eyebrow, we understand that beauty is not just about appearance; it's about feeling confident and refreshed. That's why we take the time to understand your needs and preferences, ensuring that each service is tailored to suit your individual style and skin type.
+
+Whether you're looking for a quick touch-up or a complete makeover, we are here to provide you with a relaxing and rejuvenating experience. Come visit us and discover the art of beauty, where every detail is crafted with care and every visit leaves you feeling inspired.
+        """
+    )
+    st.write("[Facebook Page >](https://www.facebook.com/Optimize.Eyebrows)")
+    st.write("[Instagram Page >](https://www.instagram.com/optimize_eyebrows/)")
 
 # ---- PROJECTS ----
 with st.container():
@@ -74,86 +71,22 @@ with st.container():
         st.empty()
 
 # ---- CONTACT ----
-with st.container():
-    st.write("---")
-    st.header("Get In Touch With Me!")
-    st.write("##")
+with st.sidebar:
+    with st.container():
+        st.write("---")
+        st.subheader("Contact Us!")
 
-    # Documention: https://formsubmit.co/ !!! CHANGE EMAIL ADDRESS !!!
-    contact_form = """
-    <form action="https://formsubmit.co/shobhit.shakya@gmail.com" method="POST">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" placeholder="Your message here" required></textarea>
-        <button type="submit">Send</button>
-    </form>
-    """
-    left_column, right_column = st.columns(2)
-    with left_column:
+        # Documention: https://formsubmit.co/ !!! CHANGE EMAIL ADDRESS !!!
+        contact_form = """
+        <form action="https://formsubmit.co/shobhit.shakya@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message here" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        """
         st.markdown(contact_form, unsafe_allow_html=True)
-    with right_column:
-        st.empty()
+        st.write("---")
 
-# import streamlit as st
-# import smtplib
-# from email.mime.text import MIMEText
-# from email.mime.multipart import MIMEMultipart
 
-# def send_message(name, email, message):
-#     sender_email = "eyebrowoptimize@gmail.com"  # Replace with your email
-#     sender_password = "optimize123"  # Replace with your password or app password
-#     receiver_email = "eyebrowoptimize@gmail.com"  # Where you want to receive the messages
-
-#     # Email subject and body setup
-#     subject = "New Contact Us Message"
-#     body = f"Name: {name}\nEmail: {email}\nMessage: {message}"
-    
-#     # Creating a multipart message
-#     msg = MIMEMultipart()
-#     msg["From"] = sender_email
-#     msg["To"] = receiver_email
-#     msg["Subject"] = subject
-    
-#     # Attach the body to the email
-#     msg.attach(MIMEText(body, "plain"))
-    
-#     try:
-#         # Setup the SMTP server
-#         server = smtplib.SMTP("smtp.gmail.com", 587)
-#         server.starttls()  # Secure the connection
-#         server.login(sender_email, sender_password)
-#         text = msg.as_string()
-#         server.sendmail(sender_email, receiver_email, text)
-#         st.success("Email sent successfully")
-#     except Exception as e:
-#         st.error(f"Failed to send email. Error: {e}")
-#     finally:
-#         server.quit()
-
-#     # left_column, right_column = st.columns(2)
-#     # with left_column:
-#     #     st.markdown(contact_form, unsafe_allow_html=True)
-#     # with right_column:
-#     #     st.empty()
-
-# # Streamlit form for "Contact Us"
-# st.title('Contact Us')
-
-# with st.container():
-#     st.write("We'd love to hear from you! Fill out the form below and we'll get back to you as soon as possible.")
-    
-#     left_column, right_column = st.columns(2)
-#     with left_column:
-#         with st.form("contact_form", clear_on_submit=True):
-#             name = st.text_input("Name")
-#             email = st.text_input("Email")
-#             message = st.text_area("Message", height=150)
-#             submit_button = st.form_submit_button("Send Message")
-        
-#             if submit_button:
-#                 send_message(name, email, message)
-
-#     with right_column:
-#         st.empty()
-    
