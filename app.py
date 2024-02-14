@@ -7,7 +7,6 @@ from PIL import Image
 # Find more emojis here: https://www.webfx.com/tools/emoji-cheat-sheet/
 st.set_page_config(page_title="Optimize Eyebrow", layout="wide")
 
-
 def load_lottieurl(url):
     r = requests.get(url)
     if r.status_code != 200:
@@ -24,13 +23,13 @@ def local_css(file_name):
 local_css("style/style.css")
 
 # ---- LOAD ASSETS ----
-lottie_coding = load_lottieurl("https://assets5.lottiefiles.com/packages/lf20_fcfjwiyb.json")
-img_contact_form = Image.open("images/2021-03-12.jpg")
-img_lottie_animation = Image.open("images/133953700_1063355007518135_1256085435724720813_n.jpg")
+img_1 = Image.open("images/2021-03-12.jpg")
+img_2 = Image.open("images/133953700_1063355007518135_1256085435724720813_n.jpg")
 
 # ---- HEADER SECTION ----
 with st.container():
-    st.title("Optimize Eyebrow")
+    st.header('Optimize Eyebrow', divider='rainbow')
+    # st.title("Optimize Eyebrow")
     st.subheader("Look Great, Feel Amazing!")
     st.write(
         "Welcome to Optimize Eyebrow, your one-stop-shop for all your beauty needs. Our team of experts has been providing high-quality services to the Maineville, Ohio community for 2 years. Whether you need eyebrow optimization, threading, waxing, facials, haircuts, or beauty products, we have everything you need to keep looking and feeling amazing every single day. Treat yourself to one of our bookable pampering services today."
@@ -40,7 +39,7 @@ with st.container():
 # ---- WHAT WE DO ----
 with st.container():
     st.write("---")
-    st.header("About Us")
+    st.subheader("About Us")
     st.write(
         """
 Our journey began in [Year], with a passion for enhancing natural beauty and a commitment to customer satisfaction. Our team of experienced and skilled professionals specializes in a range of services, including eyebrow threading, waxing, facial cleansing, haircuts, and more. We believe in using high-quality products and the latest techniques to ensure you leave our salon feeling and looking your best.
@@ -60,13 +59,13 @@ with st.container():
     st.write("##")
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        st.image(img_lottie_animation)
+        st.image(img_1)
     with text_column:
         st.empty()
 with st.container():
     image_column, text_column = st.columns((1, 2))
     with image_column:
-        st.image(img_contact_form)
+        st.image(img_2)
     with text_column:
         st.empty()
 
@@ -78,7 +77,7 @@ with st.sidebar:
 
         # Documention: https://formsubmit.co/ !!! CHANGE EMAIL ADDRESS !!!
         contact_form = """
-        <form action="https://formsubmit.co/shobhit.shakya@gmail.com" method="POST">
+        <form action="https://formsubmit.co/risalsudeep@gmail.com" method="POST">
             <input type="hidden" name="_captcha" value="false">
             <input type="text" name="name" placeholder="Your name" required>
             <input type="email" name="email" placeholder="Your email" required>
@@ -88,23 +87,3 @@ with st.sidebar:
         """
         st.markdown(contact_form, unsafe_allow_html=True)
         st.write("---")
-
-
-# Initialize a session state variable to track the sidebar state
-if 'sidebar_expanded' not in st.session_state:
-    st.session_state.sidebar_expanded = True
-
-# Function to toggle the sidebar state
-def toggle_sidebar():
-    st.session_state.sidebar_expanded = not st.session_state.sidebar_expanded
-
-# Button to toggle the sidebar
-st.button("Contact Us", on_click=toggle_sidebar)
-
-# # Use the session state variable to show/hide sidebar content
-# if st.session_state.sidebar_expanded:
-#     st.sidebar.write("This is the sidebar content.")
-
-# st.write("This is the main content area.")
-
-
