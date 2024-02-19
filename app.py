@@ -16,9 +16,24 @@ def local_css(file_name):
 
 local_css("style/style.css")
 
-# ---- LOAD ASSETS ----
-img_1 = Image.open("images/2021-03-12.jpg")
-img_2 = Image.open("images/133953700_1063355007518135_1256085435724720813_n.jpg")
+# ---- CONTACT ----
+with st.sidebar:
+    with st.container():
+        st.write("---")
+        st.subheader("Contact Us!")
+
+        # Documention: https://formsubmit.co/ !!! CHANGE EMAIL ADDRESS !!!
+        contact_form = """
+        <form action="https://formsubmit.co/risalsudeep@gmail.com" method="POST">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="name" placeholder="Your name" required>
+            <input type="email" name="email" placeholder="Your email" required>
+            <textarea name="message" placeholder="Your message here" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        """
+        st.markdown(contact_form, unsafe_allow_html=True)
+        st.write("---")
 
 # ---- HEADER SECTION ----
 with st.container():
@@ -45,11 +60,15 @@ Whether you're looking for a quick touch-up or a complete makeover, we are here 
     st.write("[Facebook Page >](https://www.facebook.com/Optimize.Eyebrows)")
     st.write("[Instagram Page >](https://www.instagram.com/optimize_eyebrows/)")
 
+# ---- LOAD ASSETS ----
+img_1 = Image.open("images/2021-03-12.jpg")
+img_2 = Image.open("images/133953700_1063355007518135_1256085435724720813_n.jpg")
+
+st.write("---")
+st.subheader("Gallery")
+
 # ---- PROJECTS ----
 with st.container():
-    st.write("---")
-    st.header("Gallery")
-    st.write("##")
     image_column, text_column = st.columns((1, 2))
     with image_column:
         st.image(img_1)
@@ -62,21 +81,4 @@ with st.container():
     with text_column:
         st.empty()
 
-# ---- CONTACT ----
-with st.sidebar:
-    with st.container():
-        st.write("---")
-        st.subheader("Contact Us!")
 
-        # Documention: https://formsubmit.co/ !!! CHANGE EMAIL ADDRESS !!!
-        contact_form = """
-        <form action="https://formsubmit.co/risalsudeep@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="text" name="name" placeholder="Your name" required>
-            <input type="email" name="email" placeholder="Your email" required>
-            <textarea name="message" placeholder="Your message here" required></textarea>
-            <button type="submit">Send</button>
-        </form>
-        """
-        st.markdown(contact_form, unsafe_allow_html=True)
-        st.write("---")
